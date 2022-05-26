@@ -1,0 +1,60 @@
+{
+  "name": "html-tag-wrapper",
+  "repository" : "put it once public",
+	"displayName": "HTML tag wrapper",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.67.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+        "onStartupFinished"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"keybindings": [
+			{
+				"command": "html-tag-wrapper.tag_wrapper_span",
+				"key": "ctrl+'",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "html-tag-wrapper.tag_wrapper_div",
+				"key": "ctrl+;",
+				"when": "editorHasSelection"
+			}
+		],
+		"commands": [
+			{
+				"command": "html-tag-wrapper.tag_wrapper_span",
+				"title": "Inline tag wrapper",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "html-tag-wrapper.tag_wrapper_div",
+				"title": "Block tag wrapper",
+				"when": "editorHasSelection"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+        "@types/vscode": "^1.67.0",
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.1",
+        "@types/node": "14.x",
+        "eslint": "^8.14.0",
+        "glob": "^8.0.1",
+        "mocha": "^9.2.2",
+        "typescript": "^4.6.4",
+        "@vscode/test-electron": "^2.1.3"
+    }
+
+}
